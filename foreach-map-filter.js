@@ -150,7 +150,10 @@ Examples:
 */
 
 function extractFullName(arr) {
-
+    const newArr = arr.map(function (val) {
+        return val['first'] + ' ' + val['last'];
+    })
+    return newArr;
 }
 
 /*
