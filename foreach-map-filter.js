@@ -37,6 +37,12 @@ Examples:
 
 */
 function showFirstAndLast(arr) {
+    const firstAndLast = arr.map(function (str) {
+        const lengthStr = str.length;
+        //console.log(lengthStr);
+        return str[0] + str[lengthStr - 1];
+    })
+    return firstAndLast;
 
 }
 
