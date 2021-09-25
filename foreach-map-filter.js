@@ -22,7 +22,10 @@ Examples:
 
 */
 function onlyEvenValues(arr) {
-
+    const evenArr = arr.filter(function (num) {
+        return num % 2 === 0;
+    })
+    return evenArr;
 }
 
 /*
