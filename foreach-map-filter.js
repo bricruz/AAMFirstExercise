@@ -136,7 +136,10 @@ Examples:
 */
 
 function extractKey(arr, key) {
-
+    const newArr = arr.map(function (val) {
+        return val[key];
+    })
+    return newArr;
 }
 
 /*
