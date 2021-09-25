@@ -73,6 +73,29 @@ Examples:
 */
 function vowelCount(str) {
 
+    const thesekeys = [];
+    let obj = {};
+    Array.from(str.toLowerCase()).forEach(function (letter) {
+        if (isVowel(letter)) {
+            thesekeys.push(letter)
+        }
+    })
+
+
+    for (key of thesekeys) {
+        obj[key] = matchingLetters(str.toLowerCase(), key);
+    }
+
+    return obj;
+
+}
+const isVowel = function (char) {
+    return 'aeiou'.indexOf(char) !== -1;
+}
+
+//matching letters code adapted from Lorenz Lo Sauer https://stackoverflow.com/questions/881085/count-the-number-of-occurrences-of-a-character-in-a-string-in-javascript?rq=1
+function matchingLetters(str, letter) {
+    return str.split(letter).length - 1;
 }
 
 /*
@@ -83,7 +106,12 @@ Examples:
     doubleValuesWithMap([1,-2,-3]) // [2,-4,-6]
 */
 
-function doubleValuesWithMap(arr) { }
+function doubleValuesWithMap(arr) {
+    const newArr = arr.map(function (val) {
+        return val * 2;
+    })
+    return newArr;
+}
 
 /*
 Write a function called valTimesIndex which accepts an array and returns a new array with each value multiplied by the index it is currently at in the array.
@@ -94,7 +122,10 @@ Examples:
 */
 
 function valTimesIndex(arr) {
-
+    const newArr = arr.map(function (val, i) {
+        return val * i;
+    })
+    return newArr;
 }
 
 /*
