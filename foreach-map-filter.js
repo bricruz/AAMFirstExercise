@@ -90,7 +90,7 @@ function vowelCount(str) {
 
 }
 const isVowel = function (char) {
-    return 'aeiou'.indexOf(char) !== -1;
+    return 'aeiou'.indexOf(char) !== -1 || 'AEIOU'.indexOf(char) !== -1;
 }
 
 //matching letters code adapted from Lorenz Lo Sauer https://stackoverflow.com/questions/881085/count-the-number-of-occurrences-of-a-character-in-a-string-in-javascript?rq=1
@@ -211,7 +211,15 @@ Examples:
     removeVowels('ZZZZZZ') // ('zzzzzz')
 */
 
-function removeVowels(str) { }
+function removeVowels(str) {
+
+
+    const something = Array.from(str).filter(function (letter) {
+        return !isVowel(letter);
+    })
+    const newStr = something.join('');
+    return newStr;
+}
 
 /*
 Write a function called doubleOddNumbers which accepts an array and returns a new array with all of the odd numbers doubled (HINT - you can use map and filter to double and then filter the odd numbers).
