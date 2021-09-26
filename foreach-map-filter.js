@@ -59,6 +59,7 @@ function addKeyAndValue(arr, key, value) {
     arr.forEach(function (obj) {
         obj[key] = value;
     })
+    return arr;
 }
 
 /*
@@ -218,7 +219,7 @@ function removeVowels(str) {
         return !isVowel(letter);
     })
     const newStr = something.join('');
-    return newStr;
+    return newStr.toLowerCase();
 }
 
 /*
@@ -233,5 +234,8 @@ function doubleOddNumbers(arr) {
     const odds = arr.filter(function (num) {
         return num % 2 !== 0;
     });
-    return odds;
+    const oddsDoubled = odds.map(function (n) {
+        return n * 2;
+    });
+    return oddsDoubled;
 }
